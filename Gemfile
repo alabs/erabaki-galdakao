@@ -8,10 +8,12 @@ DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.30-stable" }.f
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
+gem "decidim-verifications"
 
-gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
+# gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
 gem "decidim-file_authorization_handler", github: "openpoke/decidim-file_authorization_handler", branch: "master"
-gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "main"
+# gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "main"
+gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "release/0.30-stable"
 
 gem "bootsnap", "~> 1.7"
 gem "deface", ">= 1.9"
@@ -20,6 +22,7 @@ gem "puma", ">= 6.3.1"
 gem "rails_semantic_logger"
 gem "sentry-rails"
 gem "sentry-ruby"
+gem "virtus-multiparams"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
