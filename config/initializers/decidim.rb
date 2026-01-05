@@ -447,7 +447,7 @@ if Decidim.module_installed? :verifications
 
   Decidim::Verifications.register_workflow(:census_authorization_handler) do |workflow|
     workflow.form = "CensusAuthorizationHandler"
-    workflow.admin_engine = Decidim::Verifications::CsvCensus::AdminEngine
+    # workflow.admin_engine = Decidim::Verifications::CsvCensus::AdminEngine
   end
 end
 
