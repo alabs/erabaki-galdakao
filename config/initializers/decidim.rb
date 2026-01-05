@@ -44,6 +44,14 @@ Decidim.configure do |config|
   # sections with a two-pane view
   config.page_blocks = Rails.application.secrets.decidim[:page_blocks].presence || %w(terms-of-service)
 
+  # Authorization handlers (Decidim 0.30)
+  # config.authorization_handlers = config.authorization_handlers.to_h.merge(
+  #  "census_authorization_handler" => {
+  #    name: "Censo municipal",
+  #    handler: CensusAuthorizationHandler
+  #  }
+  #)
+
   # Map and Geocoder configuration
   #
   # == HERE Maps ==
@@ -436,10 +444,11 @@ if Decidim.module_installed? :verifications
   Decidim::Verifications.configure do |config|
     config.document_types = Rails.application.secrets.dig(:verifications, :document_types).presence || %w(identification_number passport)
   end
-end
 
-Decidim::Verifications.register_workflow(:census_authorization_handler) do |workflow|
-  workflow.form = "CensusAuthorizationHandler"
+  Decidim::Verifications.register_workflow(:census_authorization_handler) do |workflow|
+    workflow.form = "CensusAuthorizationHandler"
+    workflow.admin_engine = Decidim::Verifications::CsvCensus::AdminEngine
+  end
 end
 
 Rails.application.config.i18n.available_locales = Decidim.available_locales

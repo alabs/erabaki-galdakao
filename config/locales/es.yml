@@ -10,7 +10,7 @@ es:
   decidim:
     authorization_handlers:
       census_authorization_handler:
-        name: Censo municipal
+        name: Censo municipal soap
         explanation: Verifica tu cuenta con el censo municipal
 
   census_authorization:
