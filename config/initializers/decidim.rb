@@ -448,7 +448,10 @@ if Decidim.module_installed? :verifications
   Decidim::Verifications.register_workflow(:census_authorization_handler) do |workflow|
     workflow.form = "CensusAuthorizationHandler"
     # workflow.admin_engine = Decidim::Verifications::CsvCensus::AdminEngine
-    workflow.action_authorizer_name = "CensusActionAuthorizer"
+    workflow.action_authorizer = "CensusActionAuthorizer"
+    workflow.options do |options|
+      options.attribute :streets, type: :string, required: false
+    end
   end
 end
 
@@ -457,3 +460,5 @@ Rails.application.config.i18n.default_locale = Decidim.default_locale
 
 # Inform Decidim about the assets folder
 Decidim.register_assets_path File.expand_path("app/packs", Rails.application.root)
+
+#
