@@ -14,11 +14,13 @@ Rails.application.routes.draw do
 end
 
 Decidim::Admin::Engine.routes.draw do
-   resources :galdakao, only: [:index] do
+  resources :galdakao, only: [:index] do
     collection do
       get  :streets
       post :sync
       post :check
     end
-   end
+  end
+
+  resources :zones
 end
