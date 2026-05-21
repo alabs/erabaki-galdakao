@@ -71,3 +71,4 @@ yarn-debug.log*
 tailwind.config.js
 .rubocop-http*
 .rspec-failures
+docker-compose.override.yml

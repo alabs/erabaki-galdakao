@@ -450,7 +450,7 @@ if Decidim.module_installed? :verifications
     # workflow.admin_engine = Decidim::Verifications::CsvCensus::AdminEngine
     workflow.action_authorizer = "CensusActionAuthorizer"
     workflow.options do |options|
-      options.attribute :streets, type: :string, required: false
+      options.attribute :zones, type: :string, required: false
     end
   end
 end
