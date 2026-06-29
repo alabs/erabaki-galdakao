@@ -19,11 +19,16 @@ gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer"
 gem "bootsnap", "~> 1.7"
 gem "puma", ">= 6.3.1"
 
+# Galdakao census gem local
+gem "decidim-galdakao_census", path: "gems/decidim-galdakao_census"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
   gem "brakeman", "~> 5.4"
   gem "decidim-dev", DECIDIM_VERSION
+  # Galdakao census gem local
+  gem "webmock"
 end
 
 group :development do
@@ -32,5 +37,4 @@ group :development do
   gem "web-console"
 end
 
-# Galdakao census gem local
-gem "decidim-galdakao_census", path: "gems/decidim-galdakao_census"
+
