@@ -1081,6 +1081,7 @@ DEPENDENCIES
   listen
   puma (>= 6.3.1)
   web-console
+  webmock
 
 RUBY VERSION
    ruby 3.3.10p183
