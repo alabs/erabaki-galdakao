@@ -1,8 +1,7 @@
 ---
 es:
-  layouts:
-    decidim:
-      language_chooser:
-        choose_language: Elegir el idioma
-  locale:
-    name: Castellano
+  decidim:
+    devise:
+      registrations:
+        new:
+          sign_up_also_with: Entra con tu cuenta de gmail

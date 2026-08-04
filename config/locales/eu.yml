@@ -1,8 +1,7 @@
 ---
 eu:
-  layouts:
-    decidim:
-      language_chooser:
-        choose_language: Aukeratu hizkuntza
-  locale:
-    name: Euskara
+  decidim:
+    devise:
+      registrations:
+        new:
+          sign_up_also_with: Erabili zure gmail kontua sartzeko

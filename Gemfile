@@ -3,23 +3,21 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { github: "decidim/decidim", branch: "release/0.30-stable" }.freeze
+DECIDIM_VERSION = { github: "openpoke/decidim", branch: "0.31-backports" }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
+gem "decidim-elections", DECIDIM_VERSION
 gem "decidim-initiatives", DECIDIM_VERSION
 
 gem "decidim-decidim_awesome", github: "decidim-ice/decidim-module-decidim_awesome", branch: "main"
-gem "decidim-file_authorization_handler", github: "openpoke/decidim-file_authorization_handler", branch: "master"
+gem "decidim-extra_censuses", git: "https://github.com/openpoke/decidim-module-extra_censuses"
+gem "decidim-file_authorization_handler", github: "openpoke/decidim-file_authorization_handler", branch: "main"
+gem "decidim-pokecode", github: "openpoke/decidim-module-pokecode", branch: "main"
 gem "decidim-term_customizer", github: "openpoke/decidim-module-term_customizer", branch: "main"
 
 gem "bootsnap", "~> 1.7"
-gem "deface", ">= 1.9"
-gem "health_check"
 gem "puma", ">= 6.3.1"
-gem "rails_semantic_logger"
-gem "sentry-rails"
-gem "sentry-ruby"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
@@ -29,12 +27,10 @@ group :development, :test do
 end
 
 group :development do
-  gem "letter_opener_web", "~> 2.0"
-  gem "listen", "~> 3.1"
-  gem "web-console", "~> 4.2"
+  gem "letter_opener_web"
+  gem "listen"
+  gem "web-console"
 end
 
-group :production do
-  gem "sidekiq"
-  gem "sidekiq-cron"
-end
+# Galdakao census gem local
+gem "decidim-galdakao_census", path: "gems/decidim-galdakao_census"

@@ -1,8 +1,7 @@
 ---
 en:
-  layouts:
-    decidim:
-      language_chooser:
-        choose_language: Choose language
-  locale:
-    name: English
+  decidim:
+    devise:
+      registrations:
+        new:
+          sign_up_also_with: Sign up with your gmail account
